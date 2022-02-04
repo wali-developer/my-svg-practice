@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scalable Vector Graphics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <svg viewBox="0 0 100 100">
+            <!-- Grid -->
+            <g>
+                <!-- X-axis lines -->
+                <line x1="0" y1="5" x2="100" y2="5" stroke="lightgray"></line>
+                <line x1="0" y1="10" x2="100" y2="10" stroke="lightgray"></line>
+                <line x1="0" y1="15" x2="100" y2="15" stroke="lightgray"></line>
+                <line x1="0" y1="20" x2="100" y2="20" stroke="lightgray"></line>
+                <line x1="0" y1="25" x2="100" y2="25" stroke="lightgray"></line>
+                <line x1="0" y1="30" x2="100" y2="30" stroke="lightgray"></line>
+                <line x1="0" y1="35" x2="100" y2="35" stroke="lightgray"></line>
+                <line x1="0" y1="40" x2="100" y2="40" stroke="lightgray"></line>
+                <line x1="0" y1="45" x2="100" y2="45" stroke="lightgray"></line>
+                <line x1="0" y1="50" x2="100" y2="50" stroke="lightgray"></line>
+                <line x1="0" y1="55" x2="100" y2="55" stroke="lightgray"></line>
+                <line x1="0" y1="60" x2="100" y2="60" stroke="lightgray"></line>
+                <line x1="0" y1="65" x2="100" y2="65" stroke="lightgray"></line>
+                <line x1="0" y1="70" x2="100" y2="70" stroke="lightgray"></line>
+                <line x1="0" y1="75" x2="100" y2="75" stroke="lightgray"></line>
+                <line x1="0" y1="80" x2="100" y2="80" stroke="lightgray"></line>
+                <line x1="0" y1="85" x2="100" y2="85" stroke="lightgray"></line>
+                <line x1="0" y1="90" x2="100" y2="90" stroke="lightgray"></line>
+                <line x1="0" y1="95" x2="100" y2="95" stroke="lightgray"></line>
+
+                <!-- Y-axis lines -->
+                <line x1="5" y1="0" x2="5" y2="100" stroke="lightgray"></line>
+                <line x1="10" y1="0" x2="10" y2="100" stroke="lightgray"></line>
+                <line x1="15" y1="0" x2="15" y2="100" stroke="lightgray"></line>
+                <line x1="20" y1="0" x2="20" y2="100" stroke="lightgray"></line>
+                <line x1="25" y1="0" x2="25" y2="100" stroke="lightgray"></line>
+                <line x1="30" y1="0" x2="30" y2="100" stroke="lightgray"></line>
+                <line x1="35" y1="0" x2="35" y2="100" stroke="lightgray"></line>
+                <line x1="40" y1="0" x2="40" y2="100" stroke="lightgray"></line>
+                <line x1="45" y1="0" x2="45" y2="100" stroke="lightgray"></line>
+                <line x1="50" y1="0" x2="50" y2="100" stroke="lightgray"></line>
+                <line x1="55" y1="0" x2="55" y2="100" stroke="lightgray"></line>
+                <line x1="55" y1="0" x2="55" y2="100" stroke="lightgray"></line>
+                <line x1="60" y1="0" x2="60" y2="100" stroke="lightgray"></line>
+                <line x1="65" y1="0" x2="65" y2="100" stroke="lightgray"></line>
+                <line x1="70" y1="0" x2="70" y2="100" stroke="lightgray"></line>
+                <line x1="75" y1="0" x2="75" y2="100" stroke="lightgray"></line>
+                <line x1="80" y1="0" x2="80" y2="100" stroke="lightgray"></line>
+                <line x1="85" y1="0" x2="85" y2="100" stroke="lightgray"></line>
+                <line x1="90" y1="0" x2="90" y2="100" stroke="lightgray"></line>
+                <line x1="95" y1="0" x2="95" y2="100" stroke="lightgray"></line>
+            </g>
+            <!-- Grid End -->
+
+            <!-- Rectangle -->
+            <rect class="rectangle" x="5" y="5" width="20" height="15" rx="5" ry="10%"></rect>
+            <circle class="circle" cx="37" cy="12" r="8"></circle>
+            <ellipse class="ellipse" cx="55" cy="12" rx="5" ry="10"></ellipse>
+            <polygon class="polygon" points="65 5 80 5 90 15 80 30 65 20"></polygon>
+            <polyline class="polyline" points="5 25 15 25 25 35 5 40 5 25 "></polyline>
+
+            <!-- Line command -->
+            <path class="lineCommand" d="M30, 25 L55, 25 V40 H30 Z"></path> <!-- d means draw and M is starting points, V for vertical and Z for last points -->
+
+            <!-- cube bezier command -->
+            <path class="cubebezierCmd" d="M5,55 C25,10 20,100 50,55"></path>
+            <path class="cubebezierCmd" d="M65,65 C25,40 120,40 95,65"></path> <!--C is for 2 points of Cubic Bezier curve commad-->
+
+            <!-- Quadratic bezier command -->
+            <path class="QuadraticCurveCmd" d="M5,85 Q15,105 25,85 T45,85"></path> <!--T command is for another path and Q for Quadratic commmand-->
+
+            <!-- Arc command -->
+            <path class="arc" d="M60,75 A70,205 0 0,0 80,75 V90 H60 Z"></path>
+
+            <!--Text-->
+            <text class="text" x="65" y="84">SVG text</text>
+
+            <!-- g element -->
+            <g class="combine">   <!--The G element grouped more than 1 svg-->
+                <circle class="circle" cx="15" cy="70" r="10"></circle>
+                <rect class="rectangle" height="5" width="10" x="10" y="68"></rect>
+            </g>
+
+            <!-- SVG Linear Gradient -->
+            <defs>
+                <linearGradient id="effect">
+                    <stop stop-offset="0%" stop-color="green" />
+                    <stop stop-offset="50%" stop-color="red" />
+                    <stop stop-offset="100%" stop-color="purple" />
+                </linearGradient>
+            </defs>
+            <rect class="rect" x="66" y="30" width="30" height="15"/>
+        </svg>
+    </div>
+</body>
+</html>
